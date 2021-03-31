@@ -1,11 +1,11 @@
 {
   "name": "freelancer-calculator",
   "version": "1.0.0",
-  "description": "freelancer-calculator",
-  "main": "index.js",
+  "description": "Freelancer Calculator",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ."
   },
   "keywords": [],
   "author": "Felipe Coutinho",
