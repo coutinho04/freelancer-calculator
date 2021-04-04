@@ -1,7 +1,12 @@
 import express from 'express';
 import routes from './routes.js';
+import path from 'path';
 
 const server = express();
+
+// localização da pasta views
+const __dirname = path.resolve();
+server.set('views', path.join(__dirname, '/src/views'));
 
 // habilitar template engine
 server.set('view engine', 'ejs');
