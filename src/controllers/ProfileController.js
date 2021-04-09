@@ -1,11 +1,11 @@
 import Profile from '../models/Profile.js';
 
 export default {
-  index: (req, res) => {
-    return res.render('profile', { profile: Profile.get() });
+  index: async (req, res) => {
+    return res.render('profile', { profile: await Profile.get() });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const data = req.body;
 
     const weeksPerYear = 52;
@@ -21,8 +21,9 @@ export default {
     // hourValue = valor da hora (valor mensal a receber / total de horas no mes)
     const hourValue = data['monthly-budget'] / monthlyTotalHours;
 
-    Profile.update({
-      ...Profile.get(),
+    const profile = await Profile.get();
+    await Profile.update({
+      ...profile,
       ...data,
       'hour-value': hourValue,
     });

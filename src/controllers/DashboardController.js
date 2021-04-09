@@ -3,9 +3,9 @@ import JobUtils from '../utils/JobUtils.js';
 import Profile from '../models/Profile.js';
 
 export default {
-  index: (req, res) => {
-    const jobs = Job.get();
-    const profile = Profile.get();
+  index: async (req, res) => {
+    const jobs = await Job.get();
+    const profile = await Profile.get();
 
     const statusCount = {
       progress: 0,

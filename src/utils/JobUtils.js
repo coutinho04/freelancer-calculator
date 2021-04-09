@@ -19,7 +19,7 @@ export default {
     const dayInMs = 1000 * 60 * 60 * 24;
 
     // dayDiff = data do vencimento em ms / total de ms em um dia
-    const dayDiff = Math.floor(timeDiffInMs / dayInMs);
+    const dayDiff = Math.ceil(timeDiffInMs / dayInMs);
 
     // restam x dias
     return dayDiff;
